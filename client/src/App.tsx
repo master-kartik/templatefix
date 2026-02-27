@@ -4,8 +4,8 @@ import { Task, TaskFormData } from "./types/task";
 import { TaskForm } from "./components/TaskForm";
 import { TaskList } from "./components/TaskList";
 
-const BACKEND_URL = import.meta.env.VITE_BACKEND_URL ;
-const API_URL = `${BACKEND_URL}/api/tasks`;
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:5000";
+const API_URL = "http://localhost:5000/api/tasks";
 
 const emptyForm: TaskFormData = {
   task_title: "",
@@ -36,7 +36,7 @@ export function App() {
       setError("");
     } catch (err) {
       setTasks([]);
-      setError("Cannot connect to backend. Make sure Express server is running on port 5000.");
+      setError("Cannot connect to backend.");
     }
     setLoading(false);
   }
