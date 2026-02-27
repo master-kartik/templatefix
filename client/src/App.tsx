@@ -5,7 +5,7 @@ import { TaskForm } from "./components/TaskForm";
 import { TaskList } from "./components/TaskList";
 
 const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:5000";
-const API_URL = "http://localhost:5000/api/tasks";
+const API_URL = `${BACKEND_URL}/api/tasks`;
 
 const emptyForm: TaskFormData = {
   task_title: "",
