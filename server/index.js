@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import taskRoutes from "./routes/taskRoutes.js";
 import path from "path";
 
+const app = express();
 dotenv.config();
 const __dirname = path.resolve();
  app.use(express.static(path.join(__dirname,'/client/dist')));
@@ -11,7 +12,6 @@ app.get("*", (req, res) => {
 res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
 });
 
-const app = express();
 const PORT = process.env.PORT || 5000;
 
 app.use(cors());
